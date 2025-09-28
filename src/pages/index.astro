@@ -9,7 +9,8 @@ import Layout from '../layouts/Layout.astro';
 import Hello from '../components/Hello.astro';
 import Bento from '../components/Bento.astro';
 
-import Text from '../components/Text.astro';
+import Text from '../components/Text/Text.astro';
+import Heading from '../components/Text/Heading.astro';
 ---
 
 <Layout>
@@ -29,9 +30,16 @@ import Text from '../components/Text.astro';
 				</div>
 				<div id="bento-row">
 					<Bento size="s1x2">
-						<Text>
-							Social Links
-						</Text>
+						<div class="text-box">
+							<Heading>
+								/Social Links/
+							</Heading>
+
+							<Text>
+								Links pointing to my personal GitHub, and my LinkedIn profile
+								Useful for exploring more about me!
+							</Text>
+						</div>
 					</Bento>
 
 					<Bento>
@@ -86,6 +94,8 @@ import Text from '../components/Text.astro';
 		align-items: center;
 		flex-direction: row;
 		justify-content: center;
+		margin-top: 10vh;
+		margin-bottom: 10vh;
 	}
 
 	#bento-container {
@@ -102,5 +112,14 @@ import Text from '../components/Text.astro';
 		flex-direction: row;
 		justify-content: center;
 		width: 100%;
+	}
+
+	.text-box {
+		display: flex;
+		align-items: flex-start;
+		flex-direction: column;
+		justify-content: space-around;
+		height: 80%;
+		width: 80%;
 	}
 </style>
