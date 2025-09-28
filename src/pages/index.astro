@@ -1,9 +1,15 @@
 ---
 import background from '../assets/background.svg';
 
+import { Image } from 'astro:assets';
+import GitHubLogo from '../assets/github.svg';
+import LinkedInLogo from '../assets/linkedin.svg';
+
 import Layout from '../layouts/Layout.astro';
 import Hello from '../components/Hello.astro';
 import Bento from '../components/Bento.astro';
+
+import Text from '../components/Text.astro';
 ---
 
 <Layout>
@@ -22,9 +28,19 @@ import Bento from '../components/Bento.astro';
 					<Bento size="s1x3"/>
 				</div>
 				<div id="bento-row">
-					<Bento size="s1x2"/>
-					<Bento/>
-					<Bento/>
+					<Bento size="s1x2">
+						<Text>
+							Social Links
+						</Text>
+					</Bento>
+
+					<Bento>
+						<Image src={GitHubLogo} alt=""/>
+					</Bento>
+
+					<Bento>
+						<Image src={LinkedInLogo} alt=""/>
+					</Bento>
 				</div>
 				<div id="bento-row">
 					<Bento size="s1x4"/>
