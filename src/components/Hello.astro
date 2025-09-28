@@ -1,0 +1,46 @@
+---
+const greetings = ["Hello", "Hola", "Bonjour", "Ciao", "こんにちは", "안녕하세요", "مرحبا", "Привет", "नमस्ते"];
+---
+
+<style>
+    .greeting-container {
+        font-size: 2rem;
+        font-weight: bold;
+        text-align: center;
+        transition: opacity 1s ease-in-out;
+        height: 2rem;
+        margin: 2rem;
+    }
+
+    .fade-out {
+        opacity: 0;
+    }
+
+    .fade-in {
+        opacity: 1;
+    }
+</style>
+
+<div id="greeting" class="greeting-container fade-in">
+    {greetings[0]}
+</div>
+
+<script>
+    const greetings = ["Hello", "Hola", "Bonjour", "Ciao", "こんにちは", "안녕하세요", "مرحبا", "Привет", "नमस्ते"];
+    const greetingEl = document.getElementById("greeting");
+    let index = 0;
+
+    function rotateGreeting() {
+        greetingEl!.classList.remove("fade-in");
+        greetingEl!.classList.add("fade-out");
+
+        setTimeout(() => {
+            index = (index + 1) % greetings.length;
+            greetingEl!.textContent = greetings[index];
+            greetingEl!.classList.remove("fade-out");
+            greetingEl!.classList.add("fade-in");
+        }, 1000);
+    }
+
+    setInterval(rotateGreeting, 3000); // switch every 3 seconds
+</script>
