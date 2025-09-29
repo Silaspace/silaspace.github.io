@@ -1,0 +1,150 @@
+---
+import Bento from '../components/Boxes/Bento.astro';
+import GitHub from '../components/Boxes/GitHub.astro';
+import LinkedIn from '../components/Boxes/LinkedIn.astro';
+---
+
+
+<div class="
+    grid auto-rows-fr mb-32
+       w-4/5    grid-cols-6      gap-2
+    md:w-4/5 md:grid-cols-12  md:gap-4
+    lg:w-4/5 lg:grid-cols-18  lg:gap-6
+">
+    <!-- Profile Photo -->
+
+    <div class="
+        box
+           row-start-1    row-span-2    col-start-1    col-span-2
+        md:row-start-1 md:row-span-4 md:col-start-1 md:col-span-4
+        lg:row-start-1 lg:row-span-6 lg:col-start-1 lg:col-span-6
+    ">
+        <Bento />
+    </div>
+
+    <!-- Basic Information -->
+
+    <div class="
+        box
+           row-start-1    row-span-2    col-start-3    col-span-4
+        md:row-start-1 md:row-span-4 md:col-start-5 md:col-span-8
+        lg:row-start-1 lg:row-span-4 lg:col-start-7 lg:col-span-12
+    ">
+        <Bento />
+    </div>
+
+    <!-- Dark/Light Toggle -->
+
+    <div class="
+        box
+           row-start-3    row-span-1    col-start-6     col-span-1
+        md:row-start-5 md:row-span-2 md:col-start-11 md:col-span-2
+        lg:row-start-5 lg:row-span-2 lg:col-start-17 lg:col-span-2
+    ">
+        <Bento />
+    </div>
+
+    <!-- LinkedIn Button -->
+
+    <div class="
+        box
+           row-start-3    row-span-1    col-start-5     col-span-1
+        md:row-start-5 md:row-span-2 md:col-start-9  md:col-span-2
+        lg:row-start-5 lg:row-span-2 lg:col-start-15 lg:col-span-2
+    ">
+        <LinkedIn />
+    </div>
+
+    <!-- GitHub Button -->
+
+    <div class="
+        box
+           row-start-3    row-span-1    col-start-4     col-span-1
+        md:row-start-5 md:row-span-2 md:col-start-7  md:col-span-2
+        lg:row-start-5 lg:row-span-2 lg:col-start-13 lg:col-span-2
+    ">
+        <GitHub />
+    </div>
+
+    <!-- Placehodler -->
+
+    <div class="
+        box
+           row-start-3    row-span-1    col-start-1     col-span-3
+        md:row-start-5 md:row-span-2 md:col-start-1  md:col-span-6
+        lg:row-start-5 lg:row-span-2 lg:col-start-7  lg:col-span-6
+    ">
+        <Bento />
+    </div>
+
+    <!-- Radcam Photo -->
+
+    <div class="
+        box
+           row-start-4    row-span-2    col-start-5     col-span-2
+        md:row-start-7 md:row-span-3 md:col-start-10 md:col-span-3
+        lg:row-start-7 lg:row-span-4 lg:col-start-15 lg:col-span-4
+    ">
+        <Bento />
+    </div>
+
+    <!-- Education Information -->
+
+    <div class="
+        box
+           row-start-4    row-span-2    col-start-1    col-span-4
+        md:row-start-7 md:row-span-3 md:col-start-1 md:col-span-9
+        lg:row-start-7 lg:row-span-4 lg:col-start-1 lg:col-span-14
+    ">
+        <Bento />
+    </div>
+
+    <!-- Skills Carousel -->
+
+    <div class="
+        box
+           row-start-6     row-span-1    col-start-1    col-span-6
+        md:row-start-10 md:row-span-2 md:col-start-1 md:col-span-12
+        lg:row-start-11 lg:row-span-2 lg:col-start-1 lg:col-span-18
+    ">
+        <Bento />
+    </div>
+
+    <!-- Group project -->
+
+    <div class="
+        box
+           row-start-7     row-span-2    col-start-1    col-span-3
+        md:row-start-12 md:row-span-4 md:col-start-1 md:col-span-6
+        lg:row-start-13 lg:row-span-4 lg:col-start-1 lg:col-span-9
+    ">
+        <Bento />
+    </div>
+
+    <!-- Dissertation project -->
+
+    <div class="
+        box
+           row-start-7     row-span-2    col-start-4     col-span-3
+        md:row-start-12 md:row-span-4 md:col-start-7  md:col-span-6
+        lg:row-start-13 lg:row-span-4 lg:col-start-10 lg:col-span-9
+    ">
+        <Bento />
+    </div>
+</div>
+
+<style>
+	.grid::before {
+		content: "";
+		width: 0;
+		padding-bottom: 100%;
+		grid-row: 1 / 1;
+		grid-column: 1 / 1;
+	}
+
+	.box {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+</style>

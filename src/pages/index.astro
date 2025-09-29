@@ -1,81 +1,23 @@
 ---
 import background from '../assets/background.svg';
 
+import { Image } from 'astro:assets';
 
 import Layout from '../layouts/Layout.astro';
 import Hello from '../components/Hello.astro';
-import Bento from '../components/Boxes/Bento.astro';
-import GitHub from '../components/Boxes/GitHub.astro';
-import LinkedIn from '../components/Boxes/LinkedIn.astro';
+import Grid from '../components/Grid.astro';
 ---
 
 <Layout>
 	<div class="h-full">
-		<img class="fixed top-0 left-0 w-full h-full blur-2xl" src={background.src} alt="" fetchpriority="high" />
-
+		<Image src={background} alt="" class="fixed top-0 left-0 w-full h-full blur-2xl"/>
+		
 		<div class="flex flex-col items-center">
 			<div class="flex flex-row items-center m-32">
 				<Hello />
 			</div>
 
-			<div class="grid gap-8 grid-cols-6 auto-rows-fr w-3/5 mb-32">
-				<div class="box row-start-1 row-span-2 col-start-1 col-span-2">
-					<Bento />
-				</div>
-				
-				<div class="box row-start-1 row-span-2 col-start-3 col-span-4">
-					<Bento />
-				</div>
-
-				<div class="box row-start-3 row-span-1 col-start-1 col-span-6">
-					<Bento />
-				</div>
-
-				<div class="box row-start-4 row-span-2 col-start-1 col-span-4">
-					<Bento />
-				</div>
-
-				<div class="box row-start-4 row-span-2 col-start-5 col-span-2">
-					<Bento />
-				</div>
-
-				<div class="box row-start-6 row-span-2 col-start-1 col-span-3">
-					<Bento />
-				</div>
-
-				<div class="box row-start-6 row-span-2 col-start-4 col-span-3">
-					<Bento />
-				</div>
-
-				<div class="box row-start-8 row-span-1 col-start-1 col-span-4">
-					<Bento />
-				</div>
-
-				<div class="box row-start-8 row-span-1 col-start-5 col-span-1">
-					<GitHub />
-				</div>
-
-				<div class="box row-start-8 row-span-1 col-start-6 col-span-1">
-					<LinkedIn />
-				</div>
-			</div>
+			<Grid />
 		</div>
-	
 	</div>
 </Layout>
-
-<style>
-	.grid::before {
-		content: "";
-		width: 0;
-		padding-bottom: 100%;
-		grid-row: 1 / 1;
-		grid-column: 1 / 1;
-	}
-
-	.box {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-</style>
