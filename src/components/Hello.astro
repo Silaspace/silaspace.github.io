@@ -1,46 +1,36 @@
 ---
-const greetings = ["Hello", "Hola", "Bonjour", "Ciao", "こんにちは", "안녕하세요", "مرحبا", "Привет", "नमस्ते"];
+import Title from '../components/Text/Title.astro';
 ---
 
-<style>
-    .greeting-container {
-        font-size: 2rem;
-        font-weight: bold;
-        text-align: center;
-        transition: opacity 1s ease-in-out;
-        height: 2rem;
-        margin: 2rem;
-    }
-
-    .fade-out {
-        opacity: 0;
-    }
-
-    .fade-in {
-        opacity: 1;
-    }
-</style>
-
-<div id="greeting" class="greeting-container fade-in">
-    {greetings[0]}
-</div>
+<welcome-message>
+    <Title>
+        <div id="title" class="transition duration-1000 ease-in-out">
+            Hello
+        </div>
+    </Title>
+</welcome-message>
 
 <script>
-    const greetings = ["Hello", "Hola", "Bonjour", "Ciao", "こんにちは", "안녕하세요", "مرحبا", "Привет", "नमस्ते"];
-    const greetingEl = document.getElementById("greeting");
-    let index = 0;
+    const greetings = ["Hola", "Bonjour", "Ciao", "こんにちは", "안녕하세요", "مرحبا", "Привет", "नमस्ते", "Hello"];
 
-    function rotateGreeting() {
-        greetingEl!.classList.remove("fade-in");
-        greetingEl!.classList.add("fade-out");
+    class Welcome extends HTMLElement {
+        connectedCallback() {
+            const title = this.querySelector('div');
+            let index = 0;
 
-        setTimeout(() => {
-            index = (index + 1) % greetings.length;
-            greetingEl!.textContent = greetings[index];
-            greetingEl!.classList.remove("fade-out");
-            greetingEl!.classList.add("fade-in");
-        }, 1000);
+            setInterval(() => {
+                title!.classList.remove("opacity-100");
+                title!.classList.add("opacity-0");
+
+                setTimeout(() => {
+                    index = (index + 1) % greetings!.length;
+                    title!.textContent = greetings![index];
+                    title!.classList.remove("opacity-0");
+                    title!.classList.add("opacity-100");
+                }, 1000);
+            }, 3000); // switch every 3 seconds
+        }
     }
 
-    setInterval(rotateGreeting, 3000); // switch every 3 seconds
+    customElements.define('welcome-message', Welcome);
 </script>
